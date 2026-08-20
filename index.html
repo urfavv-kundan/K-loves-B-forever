@@ -334,6 +334,11 @@
 
     <!-- Floating 3D Background Particles -->
     <div class="particles-container" id="particlesContainer"></div>
+sec
+    <!-- Background Audio Player (Change your song source here) -->
+    <audio id="bgMusic" loop>
+        <source src="./Rang lageya.mp3" type="audio/mp3">
+    </audio>
 
     <!-- 3D Interactive Wrapper Card -->
     <div class="wrapper" id="mainWrapper">
@@ -440,6 +445,10 @@
         });
 
         function revealSurprise() {
+            // Play Background Music Autoplay on interaction
+            const music = document.getElementById('bgMusic');
+            music.play().catch(error => console.log("Audio autoplay restricted by browser policy"));
+
             const welcome = document.getElementById('welcome-screen');
             const surprise = document.getElementById('surprise-screen');
 
